@@ -1,23 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-site-verification" content="hBWC87G6JsGh9ZhA38nMY_n2o9u2UkBiz_lNinNusRE" />
     <title>Menu</title>
+    <link rel="icon" href="images/menu.png" type="images/x-icon">
     <!-- styles -->
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script> 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DZBGMEBF89"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DZBGMEBF89');
+    </script>
   </head>
   <body>
     <section class="menu">
       <!-- title -->
       <div class="title">
         <div class="logo-and-qr">
+          <img src="images/qr_code_kolyba.png" class="qr_code" />
           <img src="images/logo_normal.png" class="logo" />
-          <a href="https://qr.page/g/1AbkMRL67mx">
-            <img src="images/qr_code_kolyba.png" class="qr_code"
-          /></a>
         </div>
-        <h2>Kolyba u Kozaka</h2>
+
+        <div class="info">
+          <a href="tel:+48756450053" class="phone-number">
+            <img src="images/phone-call.png" class="phone" />
+          </a>
+          <a href="https://www.instagram.com/kolyba.u.kozaka.jg?fbclid=IwAR0aDFVYtAqfecNFaDjkuCTpC-dvd0iy1e1WTMN9rv1lKhJXe1JJcUSAt74">
+            <img src="images/instagram.png" class="insta" />
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=100092972270718">
+            <img src="images/facebook.png" class="facebook" />
+          </a>
+          <a
+            href="https://www.google.com/maps/place/Kolyba+u+Kozaka/@50.9033024,15.7317064,17z/data=!4m16!1m9!3m8!1s0x470edf88ca723c13:0xd82a9c23c85378ce!2sKolyba+u+Kozaka!8m2!3d50.9033024!4d15.7342813!9m1!1b1!16s%2Fg%2F11kpzn8ljk!3m5!1s0x470edf88ca723c13:0xd82a9c23c85378ce!8m2!3d50.9033024!4d15.7342813!16s%2Fg%2F11kpzn8ljk?entry=ttu"
+          >
+            <img src="images/placeholder.png" class="maps" />
+          </a>
+        </div>
+        <div class="book">
+        <a href="#" id="open_pop_up">Zarezerwuj stolik/Book a table</a>
+      
+
+       <div class="pop_up" id="pop_up">
+         <div class="pop_up_container">
+           <div class="pop_up_body" id="pop_up_body">
+             <p>Rezerwacja</p>
+             <form onsubmit="sendEmail(); reset(); return false;">
+               <input type="text" id="name" placeholder="Imię i nazwisko"  />
+               <input type="email" id="email" placeholder="Email"  />
+               <input type="text" id="phone" placeholder="Telefon"  />
+               <input type="date" id="date" placeholder="Data" />
+               <input type="time" id="time" placeholder="Czas"  />
+               <input type="text" id="people" placeholder="Liczba osób"  />
+               <button>Zarezerwuj</button>
+             </form>
+             <div class="pop_up_close" id="pop_up_close">&#10006</div>
+           </div>
+         </div>
+       </div>
+      </div>
+      
+            <div class="slider-container">
+               <div class="slider">
+               </div>
+               <a class="prev-btn">&#10094</a>
+               <a class="next-btn">&#10095</a>
+            </div>
+        <h2 class="name_menu">Menu</h2>
         <div class="underline"></div>
       </div>
 
@@ -27,7 +85,49 @@
       <!-- menu items -->
       <div class="section-center"></div>
     </section>
+
+    <footer class="footer">
+    <div class="order">
+       <p class="order_text">Zamów u nas przez Glovo lub Pyszne! Szybka i niezawodna dostawa prosto pod Twoje drzwi!/Make an order with us via Glovo or Pyszne! Fast and reliable delivery straight to your door!
+</p>
+          <div class="order_logo">
+             <a href="https://glovoapp.com/pl/pl/">
+               <img src="images/glovo.png" class="glovo" /></a>
+             <a href="https://www.pyszne.pl/">
+               <img src="images/pyszne.png" class="pyszne" /></a>
+          </div>
+    </div>
+
+    <div class="open_time">
+      <p>Godziny pracy:/Working hours:</p>
+      <p>Pn.- Pt./Mon-Fri. 12:00-22:00</p>
+      <p>Sb.- Nd./Mon-Sat. 12:00-22:00</p> 
+    </div>
+ 
+
+    <div class="contacts">
+        <p class="contacts_text">Kontakty:/Contacts:</p>
+        <div class="contacts_all">
+        <p class="contact-number">+48756450053</p>
+        <p class="contact-email">kolybaukozaka@gmail.com</p>
+        <div class="contacts_icon">
+          <a href="https://www.instagram.com/kolyba.u.kozaka.jg?fbclid=IwAR0aDFVYtAqfecNFaDjkuCTpC-dvd0iy1e1WTMN9rv1lKhJXe1JJcUSAt74">
+            <img src="images/instagram2.png" class="insta" />
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=100092972270718">
+            <img src="images/facebook2.png" class="facebook" />
+          </a>
+         </div>
+       </div>
+    </div>
+    
+     
+        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2479.2609835312324!2d15.731706415781708!3d50.90330237954664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470edf88ca723c13%3A0xd82a9c23c85378ce!2sKolyba%20u%20Kozaka!5e0!3m2!1sen!2sus!4v1632752250009!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  
+
+   </footer>
     <!-- javascript -->
     <script src="index.js"></script>
+
   </body>
 </html>

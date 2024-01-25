@@ -1,20 +1,11 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
-
 :root {
-  --clr-grey-1: hsl(209, 61%, 16%);
-  --clr-grey-2: hsl(211, 39%, 23%);
-  --clr-grey-3: hsl(209, 34%, 30%);
-  --clr-grey-4: hsl(209, 28%, 39%);
+  --clr-grey-1: hsl(0, 100%, 0%);
   --clr-grey-5: hsl(210, 22%, 49%);
-  --clr-grey-6: hsl(209, 23%, 60%);
-  --clr-grey-7: hsl(211, 27%, 70%);
-  --clr-grey-8: hsl(210, 31%, 80%);
-  --clr-grey-9: hsl(212, 33%, 89%);
   --clr-grey-10: hsl(210, 36%, 96%);
   --clr-white: #fff;
   --clr-gold: #c59d5f;
   --clr-black: #222;
-  --ff-primary: "Roboto", sans-serif;
+  --ff-primary: "Kaushan Script", cursive;
   --ff-secondary: "Open Sans", sans-serif;
   --transition: all 0.3s linear;
   --spacing: 0.25rem;
@@ -72,7 +63,7 @@ h3 {
   font-size: 1.25rem;
 }
 h4 {
-  font-size: 0.875rem;
+  font-size: 1rem;
 }
 p {
   margin-bottom: 1.25rem;
@@ -89,7 +80,7 @@ p {
     font-size: 1.75rem;
   }
   h4 {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
   body {
     font-size: 1rem;
@@ -104,16 +95,16 @@ p {
     grid-template-columns: repeat(2, 1fr);
   }
   .menu-item {
-    width: 100%; /* Змінюємо ширину пунктів меню на 100% на більших екранах */
+    width: 100%;
   }
   .photo {
-    height: auto; /* Змінюємо висоту зображення, щоб зберегти пропорції */
+    height: auto;
   }
   .item-info {
-    text-align: left; /* Змінюємо вирівнювання тексту на лівий бік */
+    text-align: left;
   }
   .item-text {
-    padding-top: 0.5rem; /* Збільшуємо відступ зверху для тексту пункту меню */
+    padding-top: 0.5rem;
   }
 }
 /*  global classes */
@@ -146,47 +137,82 @@ main {
   display: grid;
   place-items: center;
 }
-/*
-=============== 
-Menu
-===============
-*/
+
+/*Menu*/
 
 .menu {
   padding: 0.5rem 0;
 }
+
+.name_menu {
+  margin-top: -80px;
+}
+
 .title {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .underline {
-  width: 25rem;
+  width: 15rem;
   height: 0.25rem;
   background: var(--clr-gold);
   margin-left: auto;
   margin-right: auto;
 }
 
-.logo-and-qr {
+.info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-left: 34rem;
+  margin-top: -100px;
+}
+
+.info a {
+  display: inline-block;
+}
+
+.info img {
+  width: 30px;
+  height: 30px;
+}
+
+.logo-and-qr,
+.order_logo {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
 .logo {
-  width: 250px;
-  height: 250px;
-  margin-right: 10rem;
-  margin-left: 300px;
+  width: 230px;
+  height: 230px;
+  margin-right: 200px;
 }
 
 .qr_code {
-  width: 130px;
-  height: 130px;
-  margin-left: 1rem;
+  width: 150px;
+  height: 150px;
+  margin-right: 70px;
+}
+
+.book {
+  margin-left: 35rem;
+  margin-top: -100px;
+  display: flex;
+}
+.book a {
+  background-color: var(--clr-gold);
+  padding: 0.7rem 3rem;
+  border-radius: var(--radius);
+  color: #fff;
+  white-space: nowrap;
+  transition: all 0.3s ease;
 }
 
 .btn-container {
@@ -245,7 +271,224 @@ Menu
 }
 .item-text {
   margin-bottom: 0;
-  padding-top: 1rem;
+  padding-top: 0.2rem;
+  font-size: 0.875rem;
+}
+
+.pop_up {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.607);
+  z-index: 2;
+}
+
+.pop_up.active {
+  display: block;
+}
+
+.pop_up_container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.pop_up_body {
+  margin: auto;
+  width: 410px;
+  background-color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  padding: 50px 10px 20px 10px;
+  position: relative;
+}
+
+.pop_up_body p {
+  position: absolute;
+  top: 9px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  font-weight: 600;
+  color: #22262d;
+  margin-bottom: 0px;
+}
+
+.pop_up_body input {
+  display: block;
+  margin: 10px auto 0px auto;
+  width: 330px;
+  padding: 15px 20px;
+  background-color: #e5e5e5;
+  border-radius: 10px;
+  border: none;
+  font-weight: 300;
+  font-size: 12px;
+  color: #89909f;
+}
+
+.pop_up_body input:focus {
+  outline: none;
+}
+
+.pop_up_body button {
+  cursor: pointer;
+  display: block;
+  width: 330px;
+  margin: 12px auto 0px auto;
+  background-color: var(--clr-gold);
+  padding: 20px 0px;
+  border-radius: var(--radius);
+  color: var(--clr-black);
+  font-weight: 300;
+  font-size: 14px;
+  border: none;
+}
+
+.pop_up_close {
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.slider-container {
+  max-width: 800px;
+  margin: 7rem auto;
+  text-align: center;
+  position: relative;
+}
+
+.slider img {
+  max-width: 100%;
+  height: 20rem;
+  display: block;
+  margin: 0 auto;
+}
+
+.prev-btn,
+.next-btn {
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  color: var(--clr-gold);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.prev-btn {
+  left: 0;
+}
+
+.next-btn {
+  right: 0;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 60vh;
+  margin-top: 50px;
+  background-color: var(--clr-grey-1);
+}
+
+.order {
+  text-align: center;
+}
+
+.order_text {
+  color: rgba(245, 241, 241, 0.889);
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 16px;
+  margin-top: 50px;
+  margin-right: 35rem;
+  max-width: 300px;
+}
+.order_logo {
+  gap: 60px;
+  margin-left: 2.5rem;
+  margin-top: 20px;
+}
+
+.glovo,
+.pyszne {
+  height: 70px;
+  border-radius: var(--radius);
+}
+
+.map {
+  margin-top: 50px;
+  width: 900px;
+  height: 300px;
+  margin-bottom: 50px;
+}
+
+.open_time {
+  margin-top: -160px;
+}
+
+.open_time p {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: rgba(245, 241, 241, 0.889);
+  margin-left: 6rem;
+}
+.contacts {
+  gap: 10px;
+  margin-left: 20rem;
+  margin-top: 45px;
+}
+
+.contacts_all {
+  margin-top: -5px;
+}
+
+.contacts a {
+  display: inline-block;
+}
+
+.contacts_icon {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: center;
+  margin-left: 23rem;
+}
+
+.contact-number,
+.contact-email {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: rgba(245, 241, 241, 0.889);
+  margin-left: 20rem;
+}
+
+.contacts_text {
+  color: rgba(245, 241, 241, 0.889);
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-size: 18px;
+  max-width: 300px;
+  margin-left: 320px;
+  margin-right: auto;
+  margin-top: -160px;
+}
+
+.contacts img {
+  width: 40px;
+  height: 40px;
 }
 
 @media screen and (min-width: 768px) {
@@ -273,8 +516,28 @@ Menu
     margin-bottom: 1rem;
   }
 
+  .name_menu {
+    margin-top: -90px;
+  }
+
+  .info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 18rem;
+    margin-top: -4rem;
+  }
+
+  .info a {
+    display: inline-block;
+  }
+
+  .info img {
+    width: 20px;
+    height: 20px;
+  }
+
   .logo-and-qr {
-    margin: 0;
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -283,12 +546,18 @@ Menu
   .logo {
     width: 150px;
     height: 150px;
-    margin: 0 1rem;
+    margin-left: 8px;
+    margin-right: 110px;
+    order: 2;
   }
 
   .qr_code {
     width: 90px;
     height: 90px;
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-top: 10px;
+    order: 1;
   }
 
   .btn-container {
@@ -301,15 +570,139 @@ Menu
   }
 
   .menu-item {
-    width: 90%; /* Змінюємо ширину пунктів меню на 90% на малих екранах */
+    width: 90%;
   }
   .photo {
-    height: auto; /* Змінюємо висоту зображення, щоб зберегти пропорції */
+    height: auto;
   }
   .item-info {
-    text-align: left; /* Змінюємо вирівнювання тексту на лівий бік */
+    text-align: left;
   }
   .item-text {
-    padding-top: 0.5rem; /* Збільшуємо відступ зверху для тексту пункту меню */
+    padding-top: 0.5rem;
+  }
+
+  .pop_up_body {
+    width: 300px;
+    border-radius: 10px;
+    padding: 50px 10px 10px 8px;
+  }
+
+  .pop_up_body p {
+    top: 14px;
+  }
+
+  .pop_up_body input {
+    margin: 15px auto 0px auto;
+    width: 230px;
+    padding: 8px 8px;
+  }
+
+  .pop_up_body button {
+    width: 230px;
+    margin: 15px auto 0px auto;
+    padding: 15px 0px;
+  }
+
+  .book {
+    margin-left: 18rem;
+    margin-top: -75px;
+  }
+  .book a {
+    background-color: var(--clr-gold);
+    border-radius: 7px;
+    color: #fff;
+    font-size: 0.875rem;
+    padding: 0.5rem 0.25rem;
+    margin: 0.25rem;
+  }
+  .slider-container {
+    max-width: 400px;
+    top: -15px;
+  }
+  .slider img {
+    height: 15rem;
+  }
+
+  .footer {
+    width: 100%;
+  }
+
+  .order_text {
+    margin-right: 0;
+    max-width: none;
+    text-align: center;
+    font-size: 15px;
+    margin-top: 22px;
+  }
+
+  .order_logo {
+    gap: 30px;
+    margin-left: 7rem;
+    margin-top: 10px;
+    margin-bottom: 50px;
+  }
+
+  .glovo,
+  .pyszne {
+    height: 55px;
+  }
+
+  .map {
+    margin-top: 20px;
+    margin-left: 0;
+    width: 380px;
+    height: 200px;
+  }
+
+  .contacts {
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: 30px;
+  }
+
+  .contacts_all {
+    margin-top: 0;
+  }
+
+  .contacts a {
+    display: inline-block;
+  }
+
+  .contacts_icon {
+    gap: 30px;
+    align-items: center;
+    margin-left: 4rem;
+  }
+
+  .contact-number,
+  .contact-email {
+    font-size: 17px;
+    margin-bottom: 8px;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .contacts_text {
+    font-size: 18px;
+    margin-top: 18px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .contacts img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .open_time {
+    margin-top: 0;
+  }
+
+  .open_time p {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
